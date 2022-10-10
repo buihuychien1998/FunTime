@@ -36,31 +36,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-//            mMenuDrawer = MenuDrawer.attach(this, Position.BOTTOM);
-//        } else {
-//            mMenuDrawer = MenuDrawer.attach(this, Position.RIGHT);
-//        }
-//        mMenuDrawer.setTouchMode(MenuDrawer.TOUCH_MODE_FULLSCREEN);
-//
-//        mMenuDrawer.setMenuView(R.layout.menu_frame);
-
-//        if(HiitUtils.isTablet(this)) {
-//            mMenuDrawer.setMenuSize((int)getResources().getDimension(R.dimen.slidingmenu_size));
-//        } else {
-//            mMenuDrawer.setMenuSize((int)getResources().getDimension(R.dimen.slidingmenu_size_phone));
-//        }
-
-        // mSideMenuIcon = findViewById(R.id.imgSideMenu);
         mNewTimer =  findViewById(R.id.btnNewTimer);
-        //  mLoadTimer =  findViewById(R.id.btnLoadTimer);
-        // mTimerList =  findViewById(R.id.timerList);
-        // mAppName = (TextView) findViewById(R.id.txtAppName);
-
         MainActivityEventHandler eventHandler = new MainActivityEventHandler(this);
         mNewTimer.setOnClickListener(eventHandler);
-
-        // mTimerList.setOnItemClickListener(eventHandler);
 
         HiitApp.currentWarmupColor = null;
         HiitApp.currentHighIntensityColor = null;

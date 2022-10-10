@@ -30,6 +30,7 @@ import com.example.funtime.adapter.ColorOptionsListAdapter;
 import com.example.funtime.billing.PurchaseManager;
 import com.example.funtime.commons.Params;
 import com.example.funtime.dto.ColorOptionsItem;
+import com.example.funtime.utils.CommonUtils;
 
 
 import java.util.ArrayList;
@@ -165,16 +166,6 @@ public class ColorOptionsActivityEventHandler extends BaseEventHandler implement
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		ColorOptionsItem item = (ColorOptionsItem)parent.getItemAtPosition(position);
-		item.setChecked(true);
-		selectedColor = item.getName();
-
-		ColorOptionsItem lastSelectedItem = (ColorOptionsItem)parent.getItemAtPosition(selectedIndex);
-		lastSelectedItem.setChecked(false);
-
-		selectedIndex = position;
-
-		ColorOptionsListAdapter adapter = (ColorOptionsListAdapter) ((ColorOptionsActivity)activity).getColorList().getAdapter();
-		adapter.notifyDataSetChanged();
 		if(position >= 1){
 			if (skuDetailsList.isEmpty()) {
 				Toast.makeText(activity.getApplicationContext(), "This feature is coming soon", Toast.LENGTH_SHORT).show();
@@ -198,7 +189,13 @@ public class ColorOptionsActivityEventHandler extends BaseEventHandler implement
 
 			BillingResult result = billingClient.launchBillingFlow(activity, billingFlowParams);
 		}
-
+		item.setChecked(true);
+		selectedColor = item.getName();
+		ColorOptionsItem lastSelectedItem = (ColorOptionsItem)parent.getItemAtPosition(selectedIndex);
+		lastSelectedItem.setChecked(false);
+		selectedIndex = position;
+		ColorOptionsListAdapter adapter = (ColorOptionsListAdapter) ((ColorOptionsActivity)activity).getColorList().getAdapter();
+		adapter.notifyDataSetChanged();
 		back();
 	}
 
