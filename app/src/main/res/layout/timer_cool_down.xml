@@ -69,7 +69,7 @@
             android:textColor="@android:color/black"
             android:textSize="@dimen/title_text" />
 
-        <com.example.funtime.components.HiitEditText
+        <com.mteam.funtime.components.HiitEditText
             android:id="@+id/edtCoolDownDurationTime"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
