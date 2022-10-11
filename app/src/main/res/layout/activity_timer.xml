@@ -38,7 +38,7 @@
             app:layout_constraintRight_toLeftOf="@+id/btnReset"
             app:layout_constraintLeft_toRightOf="@+id/btnDone"
             android:textColor="@color/black"
-            android:textSize="@dimen/timer_title_text" />
+            android:textSize="32sp" />
 
         <Button
             android:id="@+id/btnReset"
